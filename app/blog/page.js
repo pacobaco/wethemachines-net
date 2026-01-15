@@ -20,8 +20,11 @@ export default async function BlogPage() {
               {post.title}
             </a>
             <div style={{ opacity: 0.6 }}>
-              {post.date} · {post.cluster} · {post.status}
-            </div>
+  {String(post.date || "").slice(0, 10)} ·{" "}
+  {String(post.cluster)} ·{" "}
+  {String(post.status)}
+</div>
+
           </li>
         ))}
       </ul>
