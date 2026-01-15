@@ -4,6 +4,12 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
+    posts.forEach(p => {
+  if (typeof p.cluster !== "string") {
+    throw new Error("Invalid cluster value");
+  }
+});
+
     <>
       <h1>Blog</h1>
 
